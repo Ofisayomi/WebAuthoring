@@ -1,0 +1,40 @@
+Page for media view for students
+Page for content view by students
+Page of students quiz Page
+Page for students quiz results
+Page for Admin to Add new Users
+Page for Admin to Configure User roles
+Page for Admin to Activate/Deactivate User
+Page for Users to change password/details
+Page for Admin to configure Tutor subject
+
+* Page for adding assignment
+- Link for downloading file
+* Slider images for students
+Edit Profile
+- Questions
+- Log out
+
+To send email======
+ var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'owolofisayo@gmail.com',
+            pass: 'Oluwfisay@12'
+        }
+    });
+
+    var mailOptions = {
+        from: 'owolofisayo@gmail.com',
+        to: 'owolofisayo@yahoo.com,owolofisayo@hotmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });

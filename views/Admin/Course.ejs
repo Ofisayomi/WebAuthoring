@@ -1,0 +1,23 @@
+<div ng-controller="CourseCtrl as ctrl" class="col-md-offset-1" style="min-height: 20em;">
+    <br>
+    <h4>Course Configuration</h4>
+
+    <form name="frmCourse" class="boxtop" style="padding-bottom: 30px;">
+        <label>{{ctrl.message}}</label>
+        <div class="input-group controls">
+            <span class="input-group-addon">
+               <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            <input ng-model="ctrl.course.description" type="text" class="form-control" name="txtCourseDescr" placeholder="Enter Course Title" required>
+        </div>
+        <br>
+        <div class="input-group controls">
+            <span class="input-group-addon">
+                   <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            <input ng-model="ctrl.course.code" type="text" class="form-control" name="txtCourseDescr" placeholder="Enter Course Code" required>
+        </div>
+        <br>
+        <input ng-disabled="frmCourse.$invalid" ng-click="ctrl.CreateCourse()" type="button" value="Submit" class="btn btn-primary controls">
+    </form>
+</div>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/compiled.css' />
+    <link rel='stylesheet' href='/stylesheets/zabuto_calendar.css' />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/less-1.3.3.min.js"></script>
+    <script type="text/javascript" src="/javascripts/modernizr-2.6.3.custom.js"></script>
+    <script type="text/javascript" src="/javascripts/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-route.js"></script>
+    <script type="text/javascript" src="/javascripts/zabuto_calendar.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <style>
+        .controls {
+            width: 40%;
+        }
+        
+        h4 {
+            font-weight: bold;
+        }
+        
+        .input-group,
+        .btn {
+            width: 50%;
+            margin-left: 20%;
+        }
+        
+        .boxtop {
+            border-top-color: black;
+            border-top-style: solid;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body ng-app="StudentApp">
+    <div ng-controller="SuperCtrl as sctrl">
+        <div class="container-fluid heady">
+            <div class="row">
+
+                <!--  <div class="col-md-8">
+                <h5 style="font-weight: bold;font-size: 1.5em;color:white;margin-left:1em;">Oners Virtual Academy</h5>
+            </div>-->
+                <div class="col-md-12 row">
+                    <div class="col-md-8">
+                        <ul class="nav-pills" style="margin-top:5px;">
+                            <li class="nav-item linky">
+                                <a class="nav-link" style="color:white;font-weight: bold" href="#">Web Authoring System</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="nav-pills">
+                            <!--   <li class="nav-item" style="list-style: none; margin-right:15px;margin-top:12px;">
+                                <a class="nav-link" style="color:white;font-weight: bold " href="# "><span class="glyphicon glyphicon-bell "></span><span class="badge " style="background-color:rgb(240, 89, 89) ">5</span></a>
+                            </li>
+                            <li class="nav-item" style="list-style: none;font-weight:bold;margin-right:25px;margin-top:5px ">
+                                <a class="nav-link" style="color:white;text-decoration: none" href="#">
+                                    <%=Data.Firstname%> <img src="<%=Data.Picture%>" style="border-radius:30px;height:40px;width:40px; "></a>
+                            </li>-->
+                            <li class="nav-item" style="list-style:none;margin-top:12px;">
+                                <a class="nav-link " style="color:white;font-weight: bold;text-decoration:none; " href="/Logout">Log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" style="min-height: 500px;">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div id="sidebar-container " class="sidebar-expanded d-none d-md-block ">
+
+                        <dl class="accordion js_accordion ">
+                            <div class="BarTop">User Menu</div>
+                            <dt class="js_toggle ">Dashboard<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                            <dd class="js_content ">
+                                <ul class="nav ">
+                                    <li class="submenu "><a href="#!/Profile"><span class="glyphicon glyphicon-user "> Profile</span></a></li>
+                                    <li class="submenu "><a href="#!/ChangeAdminPass"><span class="glyphicon glyphicon-user "> Change Password</span></a></li>
+                                </ul>
+                            </dd>
+                            <!--    <dt class="js_toggle ">Calendar<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                        <dd class="js_content ">
+                            <ul class="nav ">
+                                <li class="submenu ">
+                                    Guitar
+                                </li>
+                                <li class="submenu ">
+                                    Mathematics
+                                </li>
+                            </ul>
+                        </dd>-->
+                            <!--     <dt class="js_toggle ">Files<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                        <dd class="js_content ">
+                            <ul class="nav ">
+                                <li class="submenu ">
+                                    Assignments
+                                </li>
+                                <li class="submenu ">
+                                    Project
+                                </li>
+                            </ul>
+                        </dd>-->
+                            <div class="BarTop">Manage Users</div>
+                            <dt class="js_toggle ">Users<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                            <dd class="js_content ">
+                                <ul class="nav ">
+                                    <li class="submenu "><a href="#!/AddUser"><span class="glyphicon glyphicon-envelope "> Configure New User</span></a></li>
+                                </ul>
+                            </dd>
+
+                            <div class="BarTop">Manage Academics</div>
+                            <dt class="js_toggle ">Courses<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                            <dd class="js_content ">
+                                <ul class="nav ">
+                                    <li class="submenu "><a href="#!/Course"><span class="glyphicon glyphicon-envelope "> New Course</span></a></li>
+                                </ul>
+                            </dd>
+                            <!-- <dt class="js_toggle ">English Language<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                        <dd class="js_content ">
+                            <ul class="nav ">
+                                <li class="submenu "><a href="#!/Topic"><span class="glyphicon glyphicon-education "> Topic</span></a></li>
+                                <li class="submenu "><a href="#!/Objective"><span class="glyphicon glyphicon-education "> Objectives</span></a></li>
+                                <li class="submenu "><a href="#!/Content"><span class="glyphicon glyphicon-education "> Content</span></a></li>
+                            </ul>
+                        </dd>-->
+                        </dl>
+                    </div>
+
+                </div>
+                <div class="col-md-9 ">
+                    <div ng-view></div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer container-fluid ">
+            <div class="row ">
+                <div class="col-md-6 " style="background-color:turquoise;min-height:100px; ">
+
+                </div>
+                <div class="col-md-6 " style="background-color:teal;min-height:100px ">
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    <script type="text/javascript " src="/javascripts/accordion-vertical.js "></script>
+
+    <script>
+        less.refresh(1);
+
+        $(function() {
+            $(".js_accordion ").each(function() {
+                new Accordion($(this));
+            });
+        });
+    </script>
+</body>
+
+</html>

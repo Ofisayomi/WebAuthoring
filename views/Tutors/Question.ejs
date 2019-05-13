@@ -1,0 +1,98 @@
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+<br>
+<div class="container-fluid" ng-controller="QuestCtrl as ctrl" style="min-height: 500px;">
+    <h4 style="">Questions Upload</h4>
+    <div class="row boxtop">
+
+        <div class="col-md-8">
+            <span style="font-weight: bold;text-align:center">{{ctrl.message}}</span><br>
+            <label class="control-title">Question</label>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpQueston" ng-model="ctrl.question.question" cols="50" rows="5" placeholder="Question"></textarea>
+            </div>
+        </div>
+        <div class="col-md-4" style="display:none;">
+            <label class="control-title">Instruction</label>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpInstruct" ng-model="ctrl.question.instruct" cols="25" rows="5" placeholder="Instruction"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div id="" class="col-md-3" style="background-color: white;min-height: 10em;">
+            <div class="ff-radio">
+                <input type="radio" id="radio-1" value="1" ng-model="ctrl.question.IsAnswerA" name="radioset-2" required/>
+                <label class="ff-radio-label" for="radio-1"></label>
+                <label class="ff-radio-label control-title" for="radio-1">Option A is Answer</label>
+            </div>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpEditor1" cols="15" ng-model="ctrl.question.OptionA" rows="5" placeholder="Option A"></textarea>
+            </div>
+        </div>
+        <div id="" class="col-md-3" style="background-color: transparent;min-height: 10em;">
+            <div class="ff-radio">
+                <input type="radio" id="radio-2" ng-model="ctrl.question.IsAnswerB" value="1" name="radioset-2" required/>
+                <label class="ff-radio-label" for="radio-2"></label>
+                <label class="ff-radio-label control-title" for="radio-2">Option B is Answer</label>
+            </div>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpEditor2" cols="15" ng-model="ctrl.question.OptionB" rows="5" placeholder="Option B"></textarea>
+            </div>
+            <!--  <div class="flat-buttonpane" id="UpEditor2">
+
+        </div>-->
+        </div>
+        <div id="" class="col-md-3" style="background-color: transparent;min-height: 10em;">
+            <div class="ff-radio">
+                <input type="radio" id="radio-3" value="1" ng-model="ctrl.question.IsAnswerC" name="radioset-2" required/>
+                <label class="ff-radio-label" for="radio-3"></label>
+                <label class="ff-radio-label control-title" for="radio-3">Option C is Answer</label>
+            </div>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpEditor3" cols="15" ng-model="ctrl.question.OptionC" rows="5" placeholder="Option C"></textarea>
+            </div>
+            <!-- <div class="flat-buttonpane" id="UpEditor3">
+
+        </div>-->
+        </div>
+        <div class="col-md-3" style="background-color:transparent;min-height: 10em;">
+            <div class="ff-radio">
+                <input type="radio" id="radio-4" value="1" ng-model="ctrl.question.IsAnswerD" name="radioset-2" required/>
+                <label class="ff-radio-label" for="radio-4"></label>
+                <label class="ff-radio-label control-title" for="radio-4">Option D is Answer</label>
+            </div>
+            <div class="input-group controls">
+                <span class="input-group-addon">
+                       <span class="glyphicon glyphicon-edit"></span>
+                </span>
+                <textarea id="UpEditor4" cols="15" ng-model="ctrl.question.OptionD" rows="5" placeholder="Option D"></textarea>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: center; margin-bottom: 3em;">
+        <input id="btnUploadQuest" ng-click="ctrl.CreateQuestion()" class="btn btn-primary" style="width:100%;" type="button" value="Submit">
+    </div>
+</div>

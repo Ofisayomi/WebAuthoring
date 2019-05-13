@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css-responsive-menu.css" />
+    <script src="/javascripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var count = 100;
+            $('#btnSubmit').click(function() {
+                count++;
+                // This line retrieves the html content of the parent control of the comment boxes
+                var htmls = $('#ParentDiv').html();
+                // This line retrieves the html of the new comment box to be added to the comment list
+                // endeavor to copy the structure of your comment section as text and concatenate
+                // new or updated data from the database that was retrieved by your ajax method
+                var new_content = '<div style="background-color:green; width:300px;min-height:150px;margin-top:5px;">' +
+                    ' New Control Testing.... ' + count +
+                    '</div>';
+                // This line forms the new html of the whole parent html body by retrieveing the parent
+                // html content and adding it to the new html content i.e comment in your own case
+                var new_html = htmls + new_content;
+                // This update the html content of the parent control
+                $('#ParentDiv').html(new_html);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="css-responsive-menu">
+        <label for="hidden-checkbox1" class="expand-control">Menu</label>
+        <input type="checkbox" id="hidden-checkbox1" class="expand-control">
+
+        <ul class="navigation-list">
+            <li><a href="about.html">about</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+
+        <div>
+
+        </div>
+
+        <div id="ParentDiv">
+            <div style="background-color:green; width:300px;min-height:150px;">
+                New Control Testing....
+            </div>
+        </div>
+        <input type="button" value="Submit" id="btnSubmit" style="margin-top:20px; width:100px;">
+    </div>
+
+</body>
+
+</html>

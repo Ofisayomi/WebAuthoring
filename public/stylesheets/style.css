@@ -1,0 +1,80 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.submenu {
+    padding: 5px;
+    background-color: skyblue;
+    text-decoration-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.ico {
+    float: right;
+}
+
+.linky {
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.linky:hover {
+    background-color: rgb(52, 52, 247);
+    cursor: pointer;
+}
+
+.linky a:hover {
+    text-decoration: none;
+}
+
+.linky a {
+    text-decoration: none;
+}
+
+.submenu:hover {
+    opacity: 8;
+    cursor: pointer;
+    background-color: rgb(30, 161, 212);
+}
+
+.header {
+    height: auto;
+    width: 100%;
+    padding-top: 1em;
+    background-color: #008080;
+    color: white;
+}
+
+.lenk {
+    color: white;
+    font-weight: bold
+}
+
+.lenk:hover {
+    background-color: #00B7FF;
+}
+
+.heady {
+    background-image: url('../images/Back.png');
+    background-repeat: repeat-x;
+}
+
+.BarTop {
+    background-color: black;
+    padding: 3px;
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.header h3 {
+    margin-left: 2em;
+}
+
+a {
+    color: #00B7FF;
+}

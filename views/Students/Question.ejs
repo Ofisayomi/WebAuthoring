@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/compiled.css' />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css" type="text/css">
+
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/less-1.3.3.min.js"></script>
+    <script type="text/javascript" src="/javascripts/modernizr-2.6.3.custom.js"></script>
+    <script type="text/javascript" src="/javascripts/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-route.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+
+    <script src="../ExamJs/jquery-1.8.2.js"></script>
+    <script src="../ExamJs/Exams.js"></script>
+    <style>
+        .Topic {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .Topic:hover {
+            background-color: aliceblue;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .Topic span {
+            font-size: x-large;
+        }
+        
+        .controls {
+            width: 40%;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .controls {
+                min-width: 100%;
+            }
+            /* Note that the parent will be relative while the child will be absolute sm: 768px xs: lg:1200 md: 992 */
+            .sidebar {
+                visibility: hidden;
+                position: absolute;
+            }
+            .parents {
+                position: relative;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .controls {
+                max-width: 720px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .controls {
+                max-width: 960px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .controls {
+                max-width: 1140px;
+            }
+        }
+        
+        h4 {
+            font-weight: bold;
+        }
+        
+        .boxtop {
+            border-top-color: black;
+            border-top-style: solid;
+            padding-top: 20px;
+        }
+        
+        .footer {
+            margin-top: 250px;
+        }
+        
+        #buttoncontainer input {
+            width: 55px;
+            height: 22px;
+            border-radius: 5px 5px 5px 5px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="StudentApp">
+    <div class="container-fluid heady">
+        <div class="row">
+
+            <!--  <div class="col-md-8">
+                <h5 style="font-weight: bold;font-size: 1.5em;color:white;margin-left:1em;">Oners Virtual Academy</h5>
+            </div>-->
+            <div class="col-md-12 row">
+                <div class="col-md-8">
+                    <ul class="nav-pills" style="margin-top:5px;">
+                        <li class="nav-item linky">
+                            <a class="nav-link" style="color:white;font-weight: bold" href="#">Web Authoring System</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav-pills">
+                        <!--   <li class="nav-item" style="list-style: none; margin-right:15px;margin-top:12px;">
+                            <a class="nav-link" style="color:white;font-weight: bold " href="# "><span class="glyphicon glyphicon-bell "></span><span class="badge " style="background-color:rgb(240, 89, 89) ">5</span></a>
+                        </li>
+                        <li class="nav-item" style="list-style: none;font-weight:bold;margin-right:25px;margin-top:5px ">
+                            <a class="nav-link" style="color:white;text-decoration: none" href="#">
+                                
+                        </li>-->
+                        <li class="nav-item" style="list-style:none;margin-top:12px;">
+                            <a class="nav-link " style="color:white;font-weight: bold;text-decoration:none; " href="/Logout">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row parents">
+            <div class="col-md-3 ">
+                <div id="sidebar-container " class="sidebar-expanded d-none d-md-block ">
+
+                    <dl class="accordion js_accordion ">
+                        <div class="BarTop">User Menu</div>
+                        <dt class="js_toggle ">Dashboard<span class="glyphicon glyphicon-plus ico "> </span></dt>
+                        <dd class="js_content ">
+                            <ul class="nav ">
+                                <li class="submenu "><a href="/Students#!/Profile"><span class="glyphicon glyphicon-user "> Profile</span></a></li>
+
+                            </ul>
+                        </dd>
+
+                        <div class="BarTop">Course</div>
+                        <%for(var c=0; c < Subjects.length;c++){%>
+                            <dt class="js_toggle" value="<%=Subjects[c].Description%>" ng-click="sctrl.SetCourse('<%=Subjects[c].Description%>')"><%=Subjects[c].Description%><span class="glyphicon glyphicon-plus ico "> </span></dt>
+                            <dd class="js_content ">
+                                <ul class="nav ">
+                                    <li class="submenu"><a href="/Student/Topics?sub=<%=Subjects[c].Id%>"><span class="glyphicon glyphicon-education "> Topics</span></a></li>
+                                    <li class="submenu"><a href="/Students/Question?subj=<%=Subjects[c].Description%>"><span class="glyphicon glyphicon-education "> Questions</span></a></li>
+                                    <li class="submenu"><a href="/Students#!/StudResult"><span class="glyphicon glyphicon-education "> Result</span></a></li>
+                                </ul>
+                            </dd>
+                            <%}%>
+
+                    </dl>
+                </div>
+
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+                <div class="col-md-offset-1">
+                    <br>
+                    <h4>Questions <span id="time" class="col-md-offset-9">10</span></h4>
+
+                    <input type="button" id="btnStart" value="Submit Questions" style="float:right; margin-top:5px;" class="btn btn-info btn-lg">
+                    <form class="boxtop container-fluid">
+                        <span id="tools" style="font-weight: bold;"></span>
+                        <div id="Examsbody" style="margin-left:2em;">
+                            <label id="QuestNo">1</label>.
+                            <div id="Quest" style="font-size: large">
+                                <p> </p>
+                            </div>
+                            <br>
+                            <div id="instruct" style="font-style: italic;">
+                                <p>Instruction: Select the most appropriate answer.</p>
+                            </div>
+                            <div class="ff-radio">
+                                <input type="radio" id="Option1" name="radioset-2" />
+                                <label class="ff-radio-label" for="Option1"></label>
+                                <label class="ff-radio-label" id="lblOpt1" for="Option1"></label>
+                            </div>
+                            <div class="ff-radio">
+                                <input type="radio" id="Option2" name="radioset-2" />
+                                <label class="ff-radio-label" for="Option2"></label>
+                                <label class="ff-radio-label" id="lblOpt2" for="Option2"></label>
+                            </div>
+                            <div class="ff-radio">
+                                <input type="radio" id="Option3" name="radioset-2" />
+                                <label class="ff-radio-label" for="Option3"></label>
+                                <label class="ff-radio-label" id="lblOpt3" for="Option3"></label>
+                            </div>
+                            <div class="ff-radio">
+                                <input type="radio" id="Option4" name="radioset-2" />
+                                <label class="ff-radio-label" for="Option4"></label>
+                                <label class="ff-radio-label" id="lblOpt4" for="Option4"></label>
+                            </div>
+                            <div id="contss" style="margin-top:2em;">
+                                <a class="nextopt" style="color:white;font-weight: bold;" id="back">
+                                    << Previous</a><a class="nextopt" style="margin-left:25em;color:white;font-weight: bold" id="forward">Next >></a></div>
+
+                        </div>
+                        <div id="buttoncontainer" style="margin-top: 20px;">
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer container-fluid">
+        <div class="row ">
+            <div class="col-md-6 " style="background-color:turquoise;min-height:100px; ">
+
+            </div>
+            <div class="col-md-6 " style="background-color:teal;min-height:100px ">
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript " src="/javascripts/accordion-vertical.js "></script>
+
+    <script>
+        less.refresh(1);
+
+        $(function() {
+            $(".js_accordion ").each(function() {
+                new Accordion($(this));
+            });
+        });
+    </script>
+</body>
+
+</html>

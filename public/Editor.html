@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trumbowyg by Alex-D</title>
+    <base href="/test/base/url/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/dist/ui/trumbowyg.css">
+    <link rel="stylesheet" href="/dist/plugins/colors/ui/trumbowyg.colors.css">
+</head>
+
+<body>
+    <div class="dark-section">
+        <div class="container">
+            <form action="#">
+                <h2 class="title">The dark side of Trumbowyg</h2>
+
+                <div class="">
+                    <textarea id="placeholder-editor" cols="30" rows="10" placeholder="This is a placeholder..." required></textarea>
+                </div>
+
+                <button type="button" onclick="btnclick()" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/dist/trumbowyg.js"></script>
+    <script src="/dist/langs/fr.min.js"></script>
+    <script src="/dist/plugins/base64/trumbowyg.base64.js"></script>
+    <script src="/dist/plugins/colors/trumbowyg.colors.js"></script>
+    <script src="/dist/plugins/noembed/trumbowyg.noembed.js"></script>
+    <script src="/dist/plugins/pasteimage/trumbowyg.pasteimage.js"></script>
+    <script src="/dist/plugins/preformatted/trumbowyg.preformatted.js"></script>
+    <script src="/dist/plugins/upload/trumbowyg.upload.js"></script>
+    <script>
+        $(document).on('keydown', function(e) {
+            if (e.which === 27) {
+                console.log('ESCAPE');
+            }
+        });
+
+        function btnclick(textarea) {
+            alert($('#placeholder-editor').val());
+        }
+
+        $('#placeholder-editor')
+            .trumbowyg({
+                btns: [
+                    ['viewHTML'],
+                    ['p', 'blockquote', 'h1', 'h2', 'h3', 'h4'],
+                    ['strong', 'em', 'underline', 'del'],
+                    ['superscript', 'subscript'],
+                    ['createLink', 'unlink'],
+                    //      ['insertImage'],
+                    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                    ['unorderedList', 'orderedList'],
+                    ['horizontalRule'],
+                    ['removeformat'],
+                    ['base64'],
+                    ['foreColor', 'backColor'],
+                    ['preformatted'],
+                    //     ['fullscreen', 'close']
+                ]
+            })
+            .on('dblclick', function() {
+                $(this).trumbowyg();
+            })
+            .on('tbwfocus', function() {
+                console.log('focus event fired');
+            })
+            .on('tbwblur', function() {
+                console.log('blur event fired');
+            });
+    </script>
+</body>
+
+</html>

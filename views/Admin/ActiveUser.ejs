@@ -1,0 +1,96 @@
+<style>
+    .controls span,
+    .controls .glyphicon {
+        font-size: large;
+    }
+    
+    hr {
+        background-color: blue;
+    }
+    
+    .input-group,
+    .btn {
+        width: 50%;
+        margin-left: 20%;
+    }
+</style>
+
+<div class="col-md-offset-1" ng-controller="RegisterUserCtrl as ctrl">
+    <br>
+
+    <div style="padding-bottom: 30px;" ng-submit="ctrl.SubmitUser()">
+        <h4>Configure New User
+        </h4>
+        <div class="container-fluid" style="border-top-color:black;border-top-style: solid;padding-top:20px;">
+            <label style="text-align:center;color:black;">{{ctrl.message}}</label>
+            <form role="form" action="index" method="POST">
+                <div class="input-group ">
+                    <span class="input-group-addon ">
+                <span class="glyphicon glyphicon-edit "></span>
+                    </span>
+                    <input type="text" class="form-control" ng-model="ctrl.user.lastname" name="txtSurname" id="txtSurname" placeholder="Surname" required>
+                </div>
+                <br>
+                <div class="input-group ">
+                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-edit "></span>
+                    </span>
+                    <input type="text" class="form-control" name="txtFirstname" ng-model="ctrl.user.firstname" id="txtFirstname" placeholder="Firstname" required>
+                </div>
+                <br>
+                <div class="input-group ">
+                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-edit"></span>
+                    </span>
+                    <input type="text" class="form-control" ng-model="ctrl.user.othername" name="txtOthernames" id="txtOthernames" placeholder="Othername">
+                </div>
+                <br>
+                <div class="input-group ">
+                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-edit"></span>
+                    </span>
+                    <input type="number" class="form-control" ng-model="ctrl.user.phonenumber" name="txtPhone" id="txtPhone" placeholder="Phone Number" required>
+                </div>
+                <br>
+                <div class="input-group ">
+                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-edit"></span>
+                    </span>
+                    <input type="email" class="form-control" ng-model="ctrl.user.email" name="txtEmail" id="txtEmail" placeholder="Email Address" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <select class="form-control" name="drpGender" ng-model="ctrl.user.gender" required>
+                        <option value="Male">Male</option>
+                        <option vale="Female">Female</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-group">
+                    <select class="form-control" name="drpRole" ng-model="ctrl.user.role" required>
+                        <option value="Tutor">Tutor</option>
+                        <option vale="Admin">Admin</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-group ">
+                    <span class="input-group-addon ">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </span>
+                    <input type="password" class="form-control" ng-model="ctrl.user.password" name="txtPassword" id="txtPassword" placeholder="Password" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon ">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </span>
+                    <input type="password" class="form-control" ng-model="ctrl.user.confirmpassword" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <br>
+                <button type="submit" value="Register" style="width:50%;" class="btn btn-info">
+                <span class="glyphicon glyphicon-plus"></span> Register</button>
+            </form>
+
+        </div>
+    </div>
+</div>

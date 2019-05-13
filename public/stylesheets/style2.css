@@ -1,0 +1,14 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+#ImgMemberPic {
+    height: 5em;
+    width: 5em;
+    margin-left: 2em;
+}

@@ -1,0 +1,29 @@
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+
+<div class="col-md-offset-1" ng-controller="AddTopicCtrl as ctrl" style="min-height: 500px;">
+    <br>
+    <h4>Topic/Chapter Configuration</h4>
+
+    <form name="frmTopic" method="POST" class="boxtop" ng-submit="ctrl.CreateTopic()">
+        <label>{{ctrl.message}}</label>
+        <div class="input-group controls conts">
+            <span class="input-group-addon">
+                   <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            <input ng-model="ctrl.topic.description" type="text" class="form-control" name="txtTopicDescr" placeholder="Enter Topic Description" required>
+        </div>
+        <br>
+        <div class="input-group controls conts">
+            <span class="input-group-addon">
+                       <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            <textarea cols="10" rows="5" ng-model="ctrl.topic.objintro" type="text" class="form-control" name="txtTopicObjIntro" placeholder="Enter Objective Introduction" required></textarea>
+        </div>
+        <br>
+        <input ng-click="ctrl.CreateTopic()" ng-disabled="frmTopic.$invalid" type="button" value="Submit" class="btn btn-primary controls conts">
+    </form>
+</div>

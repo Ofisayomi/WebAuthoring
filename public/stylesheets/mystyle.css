@@ -1,0 +1,73 @@
+.Menulink {
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Menulink:hover {
+    cursor: pointer;
+    background-color: azure;
+    border: 2px solid black;
+}
+
+.menupanel {
+    background-color: aliceblue;
+    min-height: 500px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+#Userpic {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.option :hover {
+    cursor: pointer;
+}
+
+.UserMenu {
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#buttoncontainer1,
+#buttoncontainer2,
+#buttoncontainer3,
+#buttoncontainer4 {
+    margin-left: 2em;
+    margin-top: 1.5em;
+}
+
+#buttoncontainer1 input,
+#buttoncontainer2 input,
+#buttoncontainer3 input,
+#buttoncontainer4 input {
+    font-size: 10px;
+    margin: 2px;
+}
+
+#ImgMemberPic {
+    width: 3em;
+    height: 3em;
+}
+
+.nextopt {
+    padding: 0.7em;
+    background-color: teal;
+}
+
+.UserMenu:hover {
+    border: 2px solid black;
+    cursor: pointer;
+}

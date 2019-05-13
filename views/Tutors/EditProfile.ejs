@@ -1,0 +1,133 @@
+<style>
+    .controls span,
+    .controls .glyphicon {
+        font-size: large;
+    }
+    
+    .notify {
+        border-style: solid;
+        border-color: rgb(75, 206, 75);
+        border-width: 2px;
+        visibility: hidden;
+        border-radius: 8px 8px 8px 8px;
+        padding: 2px;
+    }
+</style>
+
+<div style="min-height: 500px;">
+    <br>
+
+
+    <form name="frmTopic">
+        <h4>User Details
+        </h4>
+        <div class="container-fluid" style="border-top-color:black;border-top-style: solid;padding-top:20px;">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group controls">
+                        <span class="glyphicon glyphicon-user"></span><span> Firstname: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                        <input type="text" id="txtFirstName" class="form-control" placeholder="Firstname">
+
+                    </div>
+                    <br>
+                    <div class="form-group controls">
+                        <span class="glyphicon glyphicon-user"></span> <span> Surname: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                        <input type="text" id="txtSurname" class="form-control" placeholder="Surname">
+                    </div>
+                    <br>
+                    <div class="form-group controls">
+                        <span class="glyphicon glyphicon-user"></span><span> Othername: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                        <input type="text" id="txtOthername" class="form-control" placeholder="Othername">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <span class="notify" id="info"><img id="ImgInfo"  src="/images/icon-check.svg" /></span>
+                        <img src="/Users/user.png" style="max-height:100px;width:100px;" id="ImgUser"></div>
+                    <input type="file" name="FileImg" class="input-control" onchange="showpreview(this);">
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <h4>
+            Bio-data
+        </h4>
+        <div class="container-fluid" style="border-top-color:black;border-top-style: solid;padding-top:20px;">
+            <!--  <div class="form-group controls">
+                <span class="glyphicon glyphicon-envelope"></span><span> Email: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <span><input type="email"  class="form-control" placeholder="Email Address" contenteditable="false"></span>
+            </div>
+            <br>-->
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-phone"></span><span> Phone Number: </span> <span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <input class="form-control" id="txtPhoneNo" type="number" placeholder="Phone Number">
+            </div>
+            <br>
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-user"></span><span> Gender: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <select class="form-control" id="drpGender">
+                       <option>Male</option>
+                       <option>Female</option>
+                   </select>
+            </div>
+            <br>
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-calendar"></span><span> Date of Birth: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <input type="date" id="txtDOB" class="form-control" placeholder="Date of Birth">
+            </div>
+            <br>
+            <!--     <div style="width:50%;height:auto" id="my-calendar"></div>
+            <br>-->
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-map-marker"></span><span> City: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <input id="txtCity" class="form-control" type="text" placeholder="City">
+            </div>
+            <br>
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-home"></span><span> State/Region: </span><span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <input id="txtState" class="form-control" type="text" placeholder="State/Region">
+            </div>
+            <br>
+            <div class="form-group controls">
+                <span class="glyphicon glyphicon-flag"></span><span> Country:  <span class="notify"><img  src="/images/icon-check.svg" /></span>
+                <select class="form-control" id="drpCountry">
+                    <option>Nigeria</option>
+                  
+                </select></span>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="/javascripts/Editprofile.js"></script>
+<script type="application/javascript">
+    $(document).ready(function() {
+        $("#my-calendar").zabuto_calendar({
+            year: 2000,
+            today: true,
+            cell_border: true,
+            show_days: true,
+            action: function() {
+                return myDateFunction(this.id, false);
+            }
+        });
+
+
+
+        function myDateFunction(id, fromModal) {
+            $("#date-popover").hide();
+            if (fromModal) {
+                $("#" + id + "_modal").modal("hide");
+            }
+            var date = $("#" + id).data("date");
+            var hasEvent = $("#" + id).data("hasEvent");
+            if (hasEvent && !fromModal) {
+                return false;
+            }
+            alert(date);
+            return true;
+        }
+    });
+</script>

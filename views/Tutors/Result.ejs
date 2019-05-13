@@ -1,0 +1,67 @@
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+
+<div class="col-md-offset-1" ng-controller="AddObjCtrl as ctrl" style="min-height: 500px;">
+    <br>
+    <h4>Assessment Result</h4>
+
+    <form name="frmObj" class="boxtop">
+        <br>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr style="font-weight:bold;">
+                    <td>Student Name</td>
+                    <td>Score (%)</td>
+                    <td>Question No. (Correct)</td>
+                    <td>Total Questions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(var c=0;c < Result.length;c++){%>
+                    <%if(Status){%>
+                        <%if(Result[c][4]==Username){%>
+                            <tr>
+                                <td>
+                                    <%=Result[c][0]%>
+                                </td>
+
+                                <td>
+                                    <%=((Result[c][2]/Result[c][3])*100).toFixed(2)%>
+                                </td>
+                                <td>
+                                    <%=Result[c][2]%>
+                                </td>
+                                <td>
+                                    <%=Result[c][3]%>
+                                </td>
+                            </tr>
+                            <%}%>
+                                <%}else{%>
+                                    <tr>
+                                        <td>
+                                            <%=Result[c][0]%>
+                                        </td>
+
+                                        <td>
+                                            <%=((Result[c][2]/Result[c][3])*100).toFixed(2)%>
+                                        </td>
+                                        <td>
+                                            <%=Result[c][2]%>
+                                        </td>
+                                        <td>
+                                            <%=Result[c][3]%>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                        <%}%>
+            </tbody>
+        </table>
+
+
+
+    </form>
+</div>

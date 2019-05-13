@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Web Authoring System
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-route.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid heady">
+        <div class="row">
+
+            <div class="col-md-7">
+                <!--  <img src="/images/oner.png" alt="logo" style="height:50px; width:auto">-->
+                <h5 style="font-weight: bold;font-size: 1.5em;color:white;margin-left:1em;">Web Authoring System</h5>
+            </div>
+            <div class="col-md-5">
+                <!--<ul class="nav nav-pills bg-dark" style="margin-top:5px;">
+                    <li class="nav-item">
+                        <a class="nav-link active text-success" style="color:white;font-weight: bold" href="#">Active link</a>
+                    </li>
+                    <li class="nav-item text-primary">
+                        <a class="nav-link" style="color:white;font-weight: bold" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:white;font-weight: bold" href="#">Rollie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" style="color:white;font-weight: bold" href="#">Disabled link</a>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="my-carousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li class="active" data-target="#my-carousel" data-slide-to="0"></li>
+                        <li data-target="#my-carousel" data-slide-to="1"></li>
+                        <li data-target="#my-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="d-block w-100" src="/images/4.jpg">
+                            <div class="carousel-caption">
+                                <h3>We Author Web Content</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="d-block w-100" src="/images/11.jpg">
+                            <div class="carousel-caption">
+                                <h3>We make life easier for teachers</h3>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="d-block w-100" src="/images/12.jpg">
+                            <div class="carousel-caption">
+                                <h3>We are unbeatable</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control left" href="#my-carousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="carousel-control right" href="#my-carousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                <p style="line-height: 25pt;font-size:15pt;text-align: justify; padding-top:25px;">
+                    Educational content on the Internet is rapidly increasing. Educational institutions and businesses are placing more course material online to supplement classroom and business training situations. Prior researchers have reported that this new web-based
+                    training technology (which has its foundation in computer-based training) has not integrated sound pedagogical practices into the authoring process when developing new tutorials. This research merges theories from the instructional
+                    design and web-based design researchers in a framework for more effective webbased tutorials. To test the effectiveness of this model, a prototype computer system is developed. This system named WeBTAS (Web-Based Tutoring Authoring
+                    System) is reviewed by two different panels of educators. These panels report that the prototype system does promote five different learning principles as part of the authoring process. In addition the system was implemented on a pilot
+                    test basis and its initial observations are that it produces an average of 15% more learning content in the same development time as conventional authoring tools.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div>
+                    <div style="margin-top:0px;padding-top:0px;">
+                        <br>
+                        <h3 style="font-weight: bold"> Sign in</h3>
+                        <form role="form" action="index" name="frmSignIn" method="POST">
+                            <div class="input-group ">
+                                <span class="input-group-addon ">
+                            <span class="glyphicon glyphicon-edit "></span>
+                                </span>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon ">
+                                    <span class="glyphicon glyphicon-edit "></span>
+                                </span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required>
+                            </div>
+                            <br>
+                            <button type="submit" style="width:100%;" formaction="signin" class="btn btn-info">
+                        <span class="glyphicon glyphicon-edit "></span> Login</button>
+                        </form>
+                    </div>
+                    <div style="margin-top:0px;padding-top:0px;">
+                        <br>
+                        <h3 style="font-weight: bold"> Register</h3>
+                        <span style="color:<%=color%>;"> <%=message%></span>
+                        <form role="form" action="index" method="POST">
+                            <div class="input-group ">
+                                <span class="input-group-addon ">
+                            <span class="glyphicon glyphicon-edit "></span>
+                                </span>
+                                <input type="text" class="form-control" name="txtSurname" id="txtSurname" placeholder="Surname">
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-edit "></span>
+                                </span>
+                                <input type="text" class="form-control" name="txtFirstname" id="txtFirstname" placeholder="Firstname">
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-edit"></span>
+                                </span>
+                                <input type="text" class="form-control" name="txtOthernames" id="txtOthernames" placeholder="Othername">
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-edit"></span>
+                                </span>
+                                <input type="number" class="form-control" name="txtPhone" id="txtPhone" placeholder="Phone Number">
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-edit"></span>
+                                </span>
+                                <input type="email" class="form-control" name="txtEmail" id="txtEmail" placeholder="Email Address">
+                            </div>
+                            <br>
+                            <div class="input-group" style="width:100%;">
+                                <select class="form-control" name="drpGender">
+                                    <option>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option vale="Female">Female</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon ">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </span>
+                                <input type="password" class="form-control" name="txtPassword" id="txtPassword " placeholder="Password ">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon ">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </span>
+                                <input type="password" class="form-control" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password ">
+                            </div>
+                            <br>
+                            <button type="submit" value="Register" style="width:100%;" formaction="/register" class="btn btn-info">
+                            <span class="glyphicon glyphicon-plus"></span> Register</button>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="background-color:turquoise;min-height:100px;">
+
+            </div>
+            <div class="col-md-6" style="background-color:teal;min-height:100px">
+
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

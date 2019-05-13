@@ -1,0 +1,32 @@
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+
+<div class="col-md-offset-1" ng-controller="AddObjCtrl as ctrl" style="min-height: 500px;">
+    <br>
+    <h4>Topic/Chapter Objective Configuration</h4>
+
+    <form name="frmObj" class="boxtop">
+        <br>
+        <label class="conts">{{ctrl.message}}</label>
+
+        <div class="form-group controls conts">
+            <span class="glyphicon glyphicon-edit"></span><span> Topic: </span>
+            <select class="form-control" ng-model="ctrl.objective.topic" required>
+            <option ng-repeat="topics in sctrl.Topics">{{topics.Description}}</option>
+        </select>
+        </div>
+        <br>
+        <div class="input-group controls conts">
+            <span class="input-group-addon">
+                   <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            <textarea cols="10" rows="5" ng-model="ctrl.objective.obj" type="text" class="form-control" name="txtTopicObjIntro" placeholder="Enter Objective Description" required></textarea>
+        </div>
+        <br>
+        <input ng-disabled="frmObj.$invalid" ng-click="ctrl.CreateObj()" type="button" value="Submit" class="btn btn-primary controls conts">
+
+    </form>
+</div>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+
+    <!--A nice, sober serif typeface-->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,500i,700,700i" rel="stylesheet">
+    <!--And a clean, simple sans typeface-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+    <!-- Also a classy monospace typeface for all you nerds -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700" rel="stylesheet">
+
+    <!--  This will import all the necessary files in one go  -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="stylesheets/mystyle.css" type="text/css">
+    <script src="/Scripts/tabcontent.js" type="text/javascript"></script>
+    <link href="template1/tabcontent.css" rel="stylesheet" type="text/css" />
+    <script src="../ExamJs/jquery-1.8.2.js"></script>
+    <!--<script src="../ExamJs/scripts.js"></script>
+
+    Put your page name here  -->
+    <title>Examination</title>
+</head>
+
+<body style="background-image: url(images/); background-repeat: no-repeat;background-position: center;">
+
+    <!--  This is the parent wrapper  -->
+    <div>
+
+        <div class="bg-teal-light" style="height:3em; width:100%;padding-top:0.5em">
+            <label class="text-green-dark" style="margin-left:1%;margin-top: 5px;font-weight:bolder">
+                Test
+            </label>
+            <h3 class="text-green-dark" id="time" style="margin-right:1em; float:right;font-weight: bolder;">00:00</h3>
+        </div>
+        <div class="">
+            <div class="row">
+
+                <div class="portion three-fourths">
+                    <div class="row" style="margin-top:0em;">
+                        <!------------- Beginning of Page Content -------------------------------------------->
+
+                        <div style="width: auto; margin: 0 auto; padding: 0px 0 40px;">
+                            <ul class="tabs" data-persist="true">
+                                <li>
+                                    <a id="SubCode" href="#view1"></a>
+                                </li>
+                            </ul>
+                            <div class="tabcontents">
+                                <div id="view1">
+                                    <div id="Examsbody" style="margin-left:2em;">
+                                        <label id="QuestNo">1.</label>
+                                        <div id="Quest">
+                                            <label></label>
+                                        </div>
+                                        <div id="instruct">
+                                            <!--  <p>Instruction: Select the most appropriate answer.</p>-->
+                                        </div>
+                                        <div class="ff-radio">
+                                            <input type="radio" id="Option1" name="Firstradio" value="150" />
+                                            <label class="ff-radio-label" for="Option1"></label>
+                                            <label class="ff-radio-label OptVal" id="lblOpt1" for="Option1"></label>
+                                        </div>
+                                        <div class="ff-radio">
+                                            <input type="radio" id="Option2" name="Firstradio" value="151" />
+                                            <label class="ff-radio-label" for="Option2"></label>
+                                            <label class="ff-radio-label" id="lblOpt2" for="Option2"></label>
+                                        </div>
+                                        <div class="ff-radio">
+                                            <input type="radio" id="Option3" name="Firstradio" value="152" />
+                                            <label class="ff-radio-label" for="Option3"></label>
+                                            <label class="ff-radio-label" id="lblOpt3" for="Option3"></label>
+                                        </div>
+                                        <div class="ff-radio">
+                                            <input type="radio" id="Option4" name="Firstradio" value="153" />
+                                            <label class="ff-radio-label" for="Option4"></label>
+                                            <label class="ff-radio-label" id="lblOpt4" for="Option4"></label>
+                                        </div>
+                                        <div id="contss" style="margin-top:2em;">
+                                            <a class="nextopt" id="back">
+                                                << Previous</a><a class="nextopt" style="margin-left:25em" id="forward">Next >></a></div>
+
+                                    </div>
+                                    <div id="buttoncontainer1">
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!---------------------------------- End of Page Content---------------------------------------->
+
+                    </div>
+                </div>
+                <div class="portion one-fourth menupanel">
+                    <label class="text-green-dark" style="font-weight:bolder;" id="UserName">Welcome: <br>Chukwuma Oluwaseun</label>
+                    <div class="row" style="padding-top:1em;">
+                        <div class="portion one-third "></div>
+                        <div class="portion one-third "><img style="height:100%; width:100%" src="icons/icon-user.svg" id="Userpic" /></div>
+                        <div class="option"></div>
+                        <div class="option"></div>
+                        <div class="option"></div>
+                        <div class="portion one-third "></div>
+                        <div class="option"></div>
+                        <div class="option"></div>
+                        <div class="option"> </div>
+                    </div>
+                    <div class="row" style="padding-top:3em">
+                        <label class="text-green-dark" style="font-weight:bolder;" id="RegNo"> <b>Reg. No: </b>49136199TY</label>
+                    </div>
+                    <div class="row">
+                        <label class="text-green-dark" style="font-weight:bolder;" id="tools"></label>
+                    </div>
+                    <div class="row">
+                        <a id="btnStart" class="ff-button shape-rounded bg-blue shadow-hard">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- == FOOTER ======================================================== -->
+
+        <!-- all-content div ends here -->
+
+        <footer>
+            <div class="row">
+                <!-- Put in as many columns as needed -->
+                <div class="portion whole bg-teal-light" style="height:3em; width:100%;padding-top:0.5em">
+                    <h6 class="text-green-dark" style="margin-left:1%;margin-top: 5px;font-weight:bold;text-align:center;">
+                        © Oners Softies 2018
+                    </h6>
+                </div>
+            </div>
+        </footer>
+
+        <!--   <script src="../ExamJs/Exams.js"></script>-->
+
+</body>
+
+</html>
