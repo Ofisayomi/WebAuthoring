@@ -185,7 +185,7 @@ module.exports = class Actions {
             //       connection.query('insert into Content(TopicId, Content, UserId, Date) select Topic.Id, ?, User.Id, ? from Topic join Course on Topic.CourseId=Course.Id join User where Course.Description=? and Topic.Description=? and User.Username=?', [content, new Date().toLocaleDateString(), subject, Topic, username],
             connection.query('select Topic.Id from Topic join Course on Course.Id = Topic.CourseId where Topic.Description=? and Course.Id=?', [Topic, subject], function(errTopic, rowTopic) {
                 connection.query('select User.Id from User where User.Username=?', [username], function(errUser, rowUser) {
-                    connection.query('insert into Content(TopicId, Content, UserId, File, Date) values (?, ?, ?, ?, ?)', [rowTopic[0].Id, content, rowUser[0].Id, extention, new Date().toLocaleDateString()],
+                    connection.query('insert into Content(TopicId, Content, UserId, File, Date) values (?, ?, ?, ?, Now())', [rowTopic[0].Id, content, rowUser[0].Id, extention],
                         function(err, rows) {
                             if (err) {
                                 reject(err)
